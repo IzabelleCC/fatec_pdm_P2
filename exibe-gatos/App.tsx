@@ -1,11 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import ImgUnica from './components/ImgUnica';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Iniciando Projeto Exibe Gatos !!!</Text>
-      <StatusBar style="auto" />
+      <ImgUnica />
     </View>
   );
 }
