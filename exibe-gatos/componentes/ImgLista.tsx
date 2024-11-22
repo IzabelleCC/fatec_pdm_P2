@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from 'react';
 import { FlatList, Image, StyleSheet, View } from 'react-native';
-import theCatAPI from '../utils/theCatAPI';
 
-type Imagem = {
+interface Imagem {
     url: string;
 };
 
-export default function ImgLista() {
-    const [listaImagens, setListaImagens] = useState<Imagem[]>([]);
+type Props = {
+    listaImagens: Imagem[];
+};
 
-    useEffect(() => {
-        const obterImagens = async () => {
-            try {
-                const response = await theCatAPI.get('search?limit=10');
-                setListaImagens(response.data);
-            } catch (error) {
-                console.error('Erro ao buscar a imagem:', error);
-            }
-        };
-        obterImagens();
-    }, []);
-
+export default function ImgLista({ listaImagens }: Props) {
     return (
         <View style={styles.container}>
             <FlatList
@@ -40,12 +28,12 @@ export default function ImgLista() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },
     imagem: {
         width: 200,
         height: 200,
+        marginBottom: 10,
     },
 });
