@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import ImgUnica from './components/ImgUnica';
+import ImgLista from './componentes/ImgLista';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ImgUnica />
+      <ImgLista />
     </View>
   );
 }
